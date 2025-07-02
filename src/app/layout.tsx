@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={kanit.className}>
-      <body className="flex flex-col lg:flex-row items-start justify-center gap-5 mt-10 px-4 sm:px-10 lg:px-40">
+      <body className="flex flex-col lg:flex-row items-start justify-center gap-5 mt-10 px-4 sm:px-10 lg:px-40 bg-black">
         <Profile />
         <main className="flex-1 w-full">{children}</main>
       </body>
