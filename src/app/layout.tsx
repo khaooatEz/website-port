@@ -5,6 +5,7 @@ import "./globals.css";
 import Profile from "./components/profile";
 
 const kanit = Kanit({
+  subsets: ["thai", "latin"],
   weight: ['400', '500', '700'],
   display: 'swap',
 });
