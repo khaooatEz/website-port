@@ -1,17 +1,26 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Page() {
+  const [loaded, setLoaded] = useState(false);
   return (
     <div className="flex flex-col">
       <h1>National Software Contest Thailand - Region level</h1>
       <p className="text-gray-300">FDrive - Mobile APP</p>
-      <div className="flex items-center justify-center my-3">
+      <div
+        className={`flex items-center justify-center my-3 ${
+          loaded ? "" : "animate-pulse"
+        }`}
+      >
         <Image
           src="/a2.jpeg"
           alt="Restaurant management system"
           width={600}
           height={200}
           className="object-cover"
+          onLoad={() => setLoaded(true)}
         />
       </div>
       <p>
@@ -53,13 +62,18 @@ export default function Page() {
         Young Socialpreneur Hackathon KU @ Sriracha 2023 - TOP 10 Finalist
       </h1>
       <p className="text-gray-300">WASH - Mobile APP</p>
-      <div className="flex items-center justify-center my-3">
+      <div
+        className={`flex items-center justify-center my-3 ${
+          loaded ? "" : "animate-pulse"
+        }`}
+      >
         <Image
           src="/a1.jpeg"
           alt="Restaurant management system"
           width={600}
           height={200}
           className="object-cover"
+          onLoad={() => setLoaded(true)}
         />
       </div>
       <div className="flex flex-row items-center gap-2">
