@@ -11,7 +11,7 @@ export default function Resumes() {
       <div className="flex flex-col">
         <div className="mt-4">
           <h1>Front-end Developer</h1>
-          <p className="text-gray-400 mb-2">Internship Bounoi Consulting</p>
+          <p className="text-gray-400 mb-2">Internship Botnoi Consulting</p>
           <p className="text-blue-400">May 2024 - Oct 2024</p>
           <p>
             Redesigned the organizations website to enhance user experience and
