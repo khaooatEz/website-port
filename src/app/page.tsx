@@ -1,18 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import About from "./components/about";
 import Resume from "./components/resume";
 import Project from "./components/project";
 import Achievement from "./components/achievement";
 
-type Tab = "About" | "Resume"  | "Project" | "Achievement";
+type Tab = "About" | "Resume" | "Project" | "Achievement";
 
 export default function Home() {
   const [tab, setTab] = useState<Tab>("About");
+  const [currentTab, setCurrentTab] = useState<Tab>("About");
+  const [animate, setAnimate] = useState(false);
 
   const renderContent = () => {
-    switch (tab) {
+    switch (currentTab) {
       case "About":
         return <About />;
       case "Resume":
@@ -23,6 +25,15 @@ export default function Home() {
         return <Achievement />;
     }
   };
+
+  useEffect(() => {
+    setAnimate(false);
+    const timeout = setTimeout(() => {
+      setCurrentTab(tab);
+      setAnimate(true);
+    }, 200);
+    return () => clearTimeout(timeout);
+  }, [tab]);
 
   return (
     <div className="flex flex-col bg-gray-900 border border-gray-700 rounded-md p-5 text-white w-full">
@@ -51,7 +62,15 @@ export default function Home() {
       </div>
 
       {/* Content */}
-      <div className="mt-3">{renderContent()}</div>
+      <div
+        className={`mt-3 transition-all duration-500 ease-out ${
+          animate
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-3 pointer-events-none"
+        }`}
+      >
+        {renderContent()}
+      </div>
     </div>
   );
 }

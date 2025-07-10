@@ -1,17 +1,29 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Profile() {
+  const [loaded, setLoaded] = useState(false);
   return (
     <div className="flex flex-col justify-center items-center bg-gray-900 rounded-md p-5 text-white border-1 border-gray-700 ">
-      <div className="overflow-hidden rounded-md w-[200px] h-[200px]">
-        <Image
-          src="/profile.jpg"
-          alt="Profile"
-          width={200}
-          height={200}
-          className="object-cover"
-        />
-      </div>
+    <div
+      className={`overflow-hidden rounded-md w-[200px] h-[200px] bg-gray-700 ${
+        loaded ? "" : "animate-pulse"
+      }`}
+    >
+      <Image
+        src="/profile.jpg"
+        alt="Profile"
+        width={200}
+        height={200}
+        className={`object-cover w-full h-full transition-opacity duration-500 ${
+          loaded ? "opacity-100" : "opacity-0"
+        }`}
+        onLoad={() => setLoaded(true)}
+      />
+    </div>
+
 
       <h1 className="mt-5 text-2xl">Kilakorn Ongkhachuen</h1>
       <p className="px-4 py-1 bg-gray-600 rounded-2xl mt-3">

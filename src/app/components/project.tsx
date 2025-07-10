@@ -1,6 +1,9 @@
+"use client";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Page() {
+  const [loaded, setLoaded] = useState(false);
   return (
     <div className="flex flex-col">
       <div className="flex flex-row items-center gap-5">
@@ -15,22 +18,32 @@ export default function Page() {
         <p className="text-gray-400 mb-2">
           Kasetsart University Sriracha Campus | FDrive - Mobile App
         </p>
-        <div className="flex items-center justify-center my-3">
+        <div
+          className={`flex items-center justify-center my-3 ${
+            loaded ? "" : "animate-pulse"
+          }`}
+        >
           <Image
             src="/p6.png"
             alt="Restaurant management system"
             width={600}
             height={200}
             className="object-cover"
+            onLoad={() => setLoaded(true)}
           />
         </div>
-        <div className="flex items-center justify-center my-3">
+        <div
+          className={`flex items-center justify-center my-3 ${
+            loaded ? "" : "animate-pulse"
+          }`}
+        >
           <Image
             src="/p5.png"
             alt="Restaurant management system"
             width={600}
             height={200}
             className="object-cover"
+            onLoad={() => setLoaded(true)}
           />
         </div>
         <div className="flex flex-row items-center gap-2">
@@ -65,7 +78,9 @@ export default function Page() {
           <h1>Tech Stack</h1>
         </div>
         <p className="text-gray-400">Framework : Flutter</p>
-        <p className="text-gray-400">Programming Languages : Dart, node.js(express)</p>
+        <p className="text-gray-400">
+          Programming Languages : Dart, node.js(express)
+        </p>
         <p className="text-gray-400">Cloud Database : Firebase</p>
         <p className="text-gray-400">Design UI : Figma</p>
         <p className="text-gray-400">Design System, Database : drawn.io</p>
@@ -76,22 +91,32 @@ export default function Page() {
           Kasetsart University Sriracha Campus | Restaurant management system -
           Mobile App
         </p>
-        <div className="flex items-center justify-center my-3">
+        <div
+          className={`flex items-center justify-center my-3 ${
+            loaded ? "" : "animate-pulse"
+          }`}
+        >
           <Image
             src="/p1.png"
             alt="Restaurant management system"
             width={600}
             height={200}
             className="object-cover"
+            onLoad={() => setLoaded(true)}
           />
         </div>
-        <div className="flex items-center justify-center my-3">
+        <div
+          className={`flex items-center justify-center my-3 ${
+            loaded ? "" : "animate-pulse"
+          }`}
+        >
           <Image
             src="/p2.png"
             alt="Restaurant management system"
             width={600}
             height={200}
             className="object-cover"
+            onLoad={() => setLoaded(true)}
           />
         </div>
         <div className="flex flex-row items-center gap-2">
@@ -184,22 +209,32 @@ export default function Page() {
         <p className="text-gray-400 mb-2">
           Kasetsart University Sriracha Campus | WASH - Mobile App
         </p>
-        <div className="flex items-center justify-center my-3">
+        <div
+          className={`flex items-center justify-center my-3 ${
+            loaded ? "" : "animate-pulse"
+          }`}
+        >
           <Image
             src="/p3.png"
             alt="Restaurant management system"
             width={600}
             height={200}
             className="object-cover"
+            onLoad={() => setLoaded(true)}
           />
         </div>
-        <div className="flex items-center justify-center my-3">
+        <div
+          className={`flex items-center justify-center my-3 ${
+            loaded ? "" : "animate-pulse"
+          }`}
+        >
           <Image
             src="/p4.png"
             alt="Restaurant management system"
             width={600}
             height={200}
             className="object-cover"
+            onLoad={() => setLoaded(true)}
           />
         </div>
         <div className="flex flex-row items-center gap-2">
